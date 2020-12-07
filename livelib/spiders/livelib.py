@@ -1,8 +1,8 @@
 import scrapy
 
 
-class TestspiderSpider(scrapy.Spider):
-    name = 'testspider'
+class LivelibSpider(scrapy.Spider):
+    name = 'livelib'
     allowed_domains = ['https://www.livelib.ru/books/top']
     start_urls = ['https://www.livelib.ru/books/top']
 
@@ -22,5 +22,4 @@ class TestspiderSpider(scrapy.Spider):
                 'rating': item.css(rating).get(),
                 'img': item.css(img).get(),
                 'link': 'https://www.livelib.ru'+str(item.css(link).extract_first()),
-
             }
