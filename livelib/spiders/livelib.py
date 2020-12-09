@@ -20,6 +20,6 @@ class LivelibSpider(scrapy.Spider):
                 'author': item.css(author).get(),
                 'year': year_list[0] if year_list else 'n/a',
                 'rating': item.css(rating).get(),
-                'img': item.css(img).get(),
-                'link': 'https://www.livelib.ru'+str(item.css(link).extract_first()),
+                'img': item.css(img).get() ,
+                'link': 'https://www.livelib.ru'+str(item.css(link).extract_first())
             }
